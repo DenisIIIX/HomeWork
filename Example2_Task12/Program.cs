@@ -5,12 +5,12 @@
         static void Main(string[] args)
         {
             Console.WriteLine("Введите число от 100 до 999 включительно");
-            Console.ReadKey();
+            
 
             int n = Convert.ToInt32(Console.ReadLine());
             string res = "";
 
-            if (n >= 100 && n <= 999)
+            if (n >=100 && n <= 999)
             {
                 switch (n / 100)
                 {
@@ -27,7 +27,7 @@
 
                 switch ((n / 10)%10)
                 {
-                    case 1: if (n / 10 == 11) res += ""; else res += " десять"; break;
+                    case 1: if ((n / 10)%10 == 1 && n % 10 == 0) res += " десять"; else res += ""; break;
                     case 2: res += " двадцать"; break;
                     case 3: res += " тридцать"; break;
                     case 4: res += " сорок"; break;
@@ -40,15 +40,15 @@
 
                 switch (n % 10)
                 {
-                    case 1: if (n / 10 == 11) res += " одиннадцать"; else res += " один"; break;
-                    case 2: if (n / 10 == 11) res += " двенадцать"; else res += " два"; break;
-                    case 3: if (n / 10 == 11) res += " тринадцать"; else res += " три"; break;
-                    case 4: if (n / 10 == 11) res += " четырнадцать"; else res += " четыре"; break;
-                    case 5: if (n / 10 == 11) res += " пятнадцать"; else res += " пять"; break;
-                    case 6: if (n / 10 == 11) res += " шестнадцать"; else res += " шесть"; break;
-                    case 7: if (n / 10 == 11) res += " семнадцать"; else res += " семь"; break;
-                    case 8: if (n / 10 == 11) res += " восемнадцать"; else res += " восемь"; break;
-                    case 9: if (n / 10 == 11) res += " девятнадцать"; else res += " девять"; break;
+                    case 1: if ((n / 10) % 10 == 1) res += " одиннадцать"; else res += " один"; break;
+                    case 2: if ((n / 10) % 10 == 1) res += " двенадцать"; else res += " два"; break;
+                    case 3: if ((n / 10) % 10 == 1) res += " тринадцать"; else res += " три"; break;
+                    case 4: if ((n / 10) % 10 == 1) res += " четырнадцать"; else res += " четыре"; break;
+                    case 5: if ((n / 10) % 10 == 1) res += " пятнадцать"; else res += " пять"; break;
+                    case 6: if ((n / 10) % 10 == 1) res += " шестнадцать"; else res += " шесть"; break;
+                    case 7: if ((n / 10) % 10 == 1) res += " семнадцать"; else res += " семь"; break;
+                    case 8: if ((n / 10) % 10 == 1) res += " восемнадцать"; else res += " восемь"; break;
+                    case 9: if ((n / 10) % 10 == 1) res += " девятнадцать"; else res += " девять"; break;
                 }
                 Console.WriteLine(res);
             }
