@@ -24,9 +24,9 @@
             if (pLus > mInus)
                 Console.WriteLine("Четных {0} > Нечетных {1}, Четных больше", pLus, mInus);
             else if (pLus == mInus)
-                Console.WriteLine("Четных {0} > Нечетных {1}, Одинаковое количесвто четных и нечетных", pLus, mInus);
+                Console.WriteLine("Четных {0} = Нечетных {1}, Одинаковое количесвто четных и нечетных", pLus, mInus);
             else
-                Console.WriteLine("Четных {0} > Нечетных {1}, Нечетных больше", pLus, mInus);
+                Console.WriteLine("Четных {0} < Нечетных {1}, Нечетных больше", pLus, mInus);
             Console.ReadKey(); ;
         }
     }
