@@ -12,10 +12,7 @@
             {
                 for (int j = 0; j < n; j++)
                 {
-                    if ((double)i%2 != 0)
-                        t[i, j] = (double)j%2 != 0 ? 1 : 0;
-                    else
-                        t[i, j] = (double)j%2 == 0 ? 1 : 0;
+                    t[i, j]= (i+j) % 2 == 0 ? 1 : 0; ;
 
                     Console.Write("{0} ", t[i, j]);
                 }
