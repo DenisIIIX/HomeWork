@@ -4,13 +4,20 @@
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Введите строку");
+            Console.Write("Введите строку: ");
             string str = Console.ReadLine();
 
-            Console.WriteLine("Нап что заменить");
-            string find = Console.ReadLine();
+            string[] result = str.Split(" ");
 
-            Console.WriteLine();
+            int mark = 0;
+
+            for (int i = 1; i < result.Length; i++)
+
+                if (result[i].Length > result[i-1].Length)
+                    mark = i;
+
+            Console.WriteLine(result[mark]);
+            Console.ReadKey();
         }
     }
 }
