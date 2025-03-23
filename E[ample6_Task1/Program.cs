@@ -7,7 +7,7 @@
             Console.WriteLine("Введите строку");
             string str = Console.ReadLine();
 
-            Console.WriteLine("Нап что заменить");
+            Console.WriteLine("На что заменить");
             string find = Console.ReadLine();
 
             Console.WriteLine();
