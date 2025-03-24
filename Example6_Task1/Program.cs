@@ -13,7 +13,7 @@
 
             for (int i = 1; i < result.Length; i++)
 
-                if (result[i].Length > result[i-1].Length)
+                if (result[i].Length > result[mark].Length)
                     mark = i;
 
             Console.WriteLine(result[mark]);
