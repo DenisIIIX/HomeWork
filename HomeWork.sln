@@ -15,6 +15,9 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Less2_Task_4", "Less2_Task_
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Less2_Task_5", "Less2_Task_5\Less2_Task_5.csproj", "{F6435B16-B2FD-4B35-8C39-730610ED8B25}"
 EndProject
+
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Example6", "Example6", "{FCD73F6A-76B4-4AD4-B32E-CA5557A4F231}"
+=======
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Example4", "Example4", "{0946A846-8769-4B2C-A7DD-434A6F4051AA}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Example4_Task1", "Example4_Task1\Example4_Task1.csproj", "{835DCD84-FF68-4175-A85A-03AF713E2238}"
@@ -48,6 +51,7 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Example5_Task6_6", "Example5_Task6_6\Example5_Task6_6.csproj", "{159CC6D6-F8BB-43EC-924C-0CC02DA170EC}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Example5_Task7_7", "Example5_Task7_7\Example5_Task7_7.csproj", "{266ADBA5-18A8-41E0-A12E-9D968F76EF41}"
+
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
