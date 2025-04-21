@@ -89,18 +89,23 @@ namespace Example10_Task1
         }
         public override double CalculateTax()
         {
-            if (!_hasElevator)
-            {
-                return _area*1000 * (1+((double)_floors - 1)*0.05);
-            }
-            else
-            {
-                return _area*1000 * (1+((double)_floors - 1)*0.05)+5000;
-            }
+            double elevatorTax = _hasElevator ? 5000 : 0;
+            return base.CalculateTax() * (1 + (_floors - 1) * 0.05) + elevatorTax;
         }
+        //public override double CalculateTax()
+        //{
+        //    if (!_hasElevator)
+        //    {
+        //        return _area*1000 * (1+((double)_floors - 1)*0.05);
+        //    }
+        //    else
+        //    {
+        //        return _area*1000 * (1+((double)_floors - 1)*0.05)+5000;
+        //    }
+        //}
         public override void DisplayInfo()
         {
-            Console.WriteLine($"Здание многоэтажное. Количество этажей: {_floors}\nРасположенное по адресу: {_address}");
+            Console.WriteLine($"Здание многоэтажное. Количество этажей: {_floors}. Наличие лифта: {(_hasElevator?"есть":"нет")}\nРасположенное по адресу: {_address}");
             Console.WriteLine($"Площадь здания: {_area}. Возраст: {BuildingAge}. Средняя площадь этажа: {AreaPerFloor}. Налог: {CalculateTax()}");
         }
         public bool IsMultiFloor 
