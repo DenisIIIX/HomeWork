@@ -6,38 +6,45 @@ namespace Example14Task2
     {
         static void Main(string[] args)
         {
-            Dictionary<string, string> phoneBook = new Dictionary<string, string>();
+            Dictionary<string, int> sklad = new Dictionary<string, int>();
+            sklad.Add("A001", 10);
+            sklad.Add("B205", 25);
+            sklad.Add("C307", 25);
 
-            phoneBook.Add("Алексей", "+7 (123 456-78-90)");
-            phoneBook.Add("Мария", "+7 (123 456-78-90)");
-            phoneBook.Add("Иван", "+7 (123 456-78-90)");
+            bool hasSmart = sklad.ContainsKey("B205");
+            Console.WriteLine($"Есть ли товар с артикулом B205? {hasSmart}");
+            Console.WriteLine();
 
-            bool hasAlexey = phoneBook.ContainsKey("Алексей");
-            Console.WriteLine($"Есть ли контакт'Алексей'? {hasAlexey}");
-         
-
-            foreach (KeyValuePair<string, string> phone in phoneBook) 
+            if (sklad.ContainsKey("A001"))
             {
-                Console.WriteLine($"{phone.Key} - {phone.Value}");
+                Console.WriteLine($"Количество ноутбуков: {sklad["A001"] -= 2}");
             }
-            if (phoneBook.ContainsKey("Мария")) 
+            Console.WriteLine();
+
+
+            if (sklad.TryGetValue("C307", out int count))
+                { Console.WriteLine($"Количество наушников: {count}"); }
+            Console.WriteLine();
+
+            if (sklad.ContainsKey("B205"))
             {
-                string mariaPhone = phoneBook["Мария"];
-                Console.WriteLine(mariaPhone);
+                Console.WriteLine($"Количество смартфонов: {sklad["B205"] += 5}");
             }
+            Console.WriteLine();
 
-            if (phoneBook.TryGetValue("Алексей", out string sashaPhone)) 
-            { Console.WriteLine(sashaPhone); }
+            sklad.Remove("C307");
 
-            phoneBook["Иван"] = "+7 999 676-65-88";
-
-            phoneBook.Remove("Алексей");
-
-            foreach (KeyValuePair<string, string> phone in phoneBook)
+            Console.WriteLine("Текущий инвентарь:");
+            foreach (KeyValuePair<string, int> device in sklad) 
             {
-                Console.WriteLine($"{phone.Key} - {phone.Value}");
+                Console.WriteLine($"Артикул: {device.Key}, Количество: {device.Value}");
             }
+            Console.WriteLine();
 
+            Console.WriteLine($"Инвентарь пуст? {sklad.Count<1}");
+
+            sklad.Clear();
+            Console.WriteLine($"Количество товаров после очистки: {sklad.Count}");
         }
     }
 }

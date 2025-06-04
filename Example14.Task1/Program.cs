@@ -4,40 +4,40 @@
     {
         static void Main(string[] args)
         {
-            List<string> tasks = new List<string>();
+            List<string> players = new List<string>();
 
-            tasks.Add("Помыть посуду");
-            tasks.Add("Купить продукты");
-            tasks.Add("Покормить кота");
+            players.Add("Иванов");
+            players.Add("Петров");
+            players.Add("Сидоров");
 
-            tasks.Insert(1, "Сделать зарядку");
-
-            bool hasCat = tasks.Contains("Покормить кота");
-            Console.WriteLine($"Есть ли задача 'Покормить кота'");
+            players.Insert(1, "Козлов");
+            foreach (string player in players)
+                Console.WriteLine(player);
+            Console.WriteLine();
             
+            bool hasPlayer1 = players.Contains("Петров");
+            Console.WriteLine($"Есть ли Петров в команде? - {hasPlayer1}");
+            Console.WriteLine(); ;
 
-            int ind1 = tasks.IndexOf("Сделать зарядку");
-            Console.WriteLine($"Сделать зарядку - {ind1}");
-           
+            players.Remove("Сидоров");
+            foreach (string player in players)
+                Console.WriteLine(player);
+            Console.WriteLine();
 
+            int ind1 = players.IndexOf("Козлов");
+            Console.WriteLine($"Индекс игрока Козлов: {ind1}");
+            Console.WriteLine();
 
-            int ind2 = tasks.IndexOf("Проверить уроки");
-            Console.WriteLine($"Сделать зарядку - {ind2}");
-            
+            players.Sort();
+            Console.WriteLine("Текущий состав команды:");
+            for (int i =0; i<players.Count; i++)
+                Console.WriteLine($"{i+1}. {players[i]}");
 
+            Console.WriteLine($"Команда пуста? {players.Count<1}");
+            Console.WriteLine();
 
-            tasks.Remove("Купить продукты");
-            foreach (string task in tasks)
-            {
-                Console.WriteLine(task);
-            }
-
-            tasks.Sort();
-
-            for (int i = 0; i<tasks.Count; i++)
-            {
-                Console.WriteLine($"{i} {tasks[i]}");
-            }
+            players.Clear();
+            Console.WriteLine($"Количество игроков после очистки: {players.Count}");
         }
     }
 }
